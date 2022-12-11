@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container p-3 mt-5" style="border: 1px solid black; border-radius: 10px;">
+        <h1 style="text-start: center;">write your blog :</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy}}
+            <br>
+            <div style="text-align: center;">
+                <input type="submit" class="btn btn-success" value="Publish">                
+            </div>
+        </form>
+</div>
+
+{% endblock content %}

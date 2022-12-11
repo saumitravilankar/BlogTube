@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid ml-5 mt-2 bg-secondary">
+        <div class="row justify-content-center p-5">
+            {% if profile.profile_pic %}
+                <div class="col-4">
+                    <img style="border: 4px solid black;" src="{{ profile.profile_pic.url }}" width="250" height="250">
+                </div>
+            {% else %}
+                <div class="col-4">
+                    <img src="{% static 'images/default.jpg' %}" style="border: 4px solid black;" width="250" height="250">
+                </div>
+            {% endif %}
+            <div class="col-8">
+                <h1>Profile Name: {{ profile.user.username }}</h1>
+                <h2>Contact Details:</h2>
+                <p><strong>Email : </strong>{{ profile.user.email }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

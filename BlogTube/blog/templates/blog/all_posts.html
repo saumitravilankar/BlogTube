@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<div id="all-post" class="container-fluid">
+    <div class="row">
+        <div  class="col-lg-8 shadow-sm pt-2 pb-2 mt-3" id="post_list">
+        {% for post in post_list %}
+        <div id="post-container" >
+            <h1><a class="title" href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p id="post-data" class="text-end date">Published On : {{ post.created_on|date:"d-M-Y" }}</p>
+            <p id="post-data" class="text-start">Written By : <a id="author" href="{% url 'user:profile' pk=post.user.profile.id %}">{{ post.user}}</a></p>
+            <p id="post-data" class="text-start">Published In: <a id="author" href="{% url 'group:group_detail' pk=post.group.pk %}">{{ post.group.name }}</p>            
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

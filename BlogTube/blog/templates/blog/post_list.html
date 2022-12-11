@@ -1,0 +1,10 @@
+
+{% for post in group.postlist %}
+
+<div class="post-container">
+    <a class="post-title" href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a>
+    <p id="post-data" class="text-start">Published By - <a id="author" href="{% url 'user:profile' pk=post.user.profile.id %}">{{ post.user}}</a> </p>
+    <p id="post-data" class="text-end date">Published On : {{ post.created_on|date:"d-M-Y" }}</p>
+    <hr>
+</div>
+{% endfor %}

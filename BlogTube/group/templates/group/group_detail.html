@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1><p class="text-center" style="font-size: 50px">{{ group.name }}</p></h1>
+
+<div class="container">
+    <hr>
+    <div class="row">
+        {% if user.profile in group.profile.all %}
+            <div class="col-lg-6">
+                <a href="{% url 'blog:post_create_new' pk=group.pk %}" class="btn btn-primary">Create your own post</a>
+            </div>
+            <div class="col-lg-6 text-end">
+                <a href="{% url 'group:group_leave' profile_id=user.profile.id group_id=group.id %}" class="btn btn-danger">Leave Group</a>
+            </div>
+        {% else %}
+            {% if user.is_authenticated %}
+            <div class="col-lg-6">
+                <a href="{% url 'group:group_join' pk=group.pk %}" class="btn btn-success">Join Group</a>
+            </div>
+            {% else %}
+            <div class="col-lg-12">
+                <h5><p class="text-end"><a style="text-decoration: none;" href="{% url 'login' %}">Login</a> to join the group and write your own blogs!</p></h5>
+            </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+
+
+<div class="container">
+    <hr>
+    {% if group.postcount == 0 %}
+    <h5><p>Be the first one to publish a post !</p></h5>
+    {% else %}
+    <h2>Posts published :</h2>
+    <hr>
+    {% include 'blog/post_list.html' %}
+    {% endif %}
+</div>
+
+{% endblock content %}

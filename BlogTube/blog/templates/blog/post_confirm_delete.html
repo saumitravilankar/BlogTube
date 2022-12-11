@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+	<h1>Do you really want to delete the post {{post.title}}?</h1>
+	<form method="POST">
+		{% csrf_token %}
+		<input type="submit" class="btn btn-warning" value="Delete">
+		<a href="{% url 'blog:post_detail' pk=post.pk %}" class="btn btn-secondary">Cancel</a>
+		
+	</form>	
+</div>
+{% endblock %}
+<!-- action="{% url 'group:group_detail' pk=post.group.pk %}" -->

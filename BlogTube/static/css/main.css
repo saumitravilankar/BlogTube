@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffedf6;
+    background-position: revert;
+    background-repeat: no-repeat;
+/*    background-size: 100% 100%;*/
+    height: 100vh;
+}
+
+.navbar-brand ,.nav-link{
+    color: white;
+}
+
+.title{
+    text-decoration: none;
+    color: #ff3d9e;
+/*    font-family: 'Chivo Mono', monospace;*/
+}
+
+.title:hover{
+    color: #ff3d9e;
+    font-size: 50px;
+}
+
+.comments{
+    text-decoration: none;
+    font-size: medium;
+}
+.comments:hover{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 60%, #FFCC70 95%);
+}
+
+.post-title{
+    text-decoration: none;
+    font-family: 'Dosis', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.group-title:hover{
+    color: pink;
+
+}
+
+#post-container{
+    border: 1px solid violet;
+    padding: 10px;
+    padding-left: 3%;
+    border-radius: 10px;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+#post-container:hover{
+    border: 4px solid black;
+}
+
+/*#all-group {
+    background: url('../images/all-post.jpg');
+    background-position: revert;s
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+*/
+/*#all-post {
+    background: url('../images/doodle.jpg');
+    background-position: revert;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}*/
+
+#post-data {
+    color: black;
+    font-size: 15px;
+}
+
+#author {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#post-data{
+    font-weight: 'Dosis', sans-serif;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+#logo {
+    color: white;
+}

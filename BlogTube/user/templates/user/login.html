@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container p-3 mt-5" style="border: 1px solid black; border-radius: 10px;">
+        <h1 style="text-align: center;">LOG IN</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            <div style="text-align: center;">
+                <input type="submit" class="btn btn-success" value="Login">                
+            </div>
+        </form>
+        <br>
+    <div class="container alert alert-info" role="alert" style="font-size: 20px; text-align: center;"><small><p class="text-left">Don't have an account? <a href="{% url 'user:sign_up' %}">Sign Up</a><span> here</span></p></small>
+    </div>
+</div>
+    
+
+{% endblock content %}
